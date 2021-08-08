@@ -1,0 +1,102 @@
+
+//Conversão int para decimal
+int myInt = 3;
+Console.WriteLine($"int: {myInt}");
+
+decimal myDecimal = myInt;
+Console.WriteLine($"decimal: {myDecimal}");
+//decimal: 3.14
+//int: 3
+
+//Conversão decimal para int
+decimal myDecimal = 3.14m;
+Console.WriteLine($"decimal: {myDecimal}");
+
+int myInt = (int)myDecimal;
+Console.WriteLine($"int: {myInt}");
+//Decimal: 1.23456789
+//Float: 1.234568
+
+
+//Eis um exemplo rápido de como utilizar o método ToString() 
+//para converter explicitamente os valores int em strings.
+int first = 5;
+int second = 7;
+string message = first.ToString() + second.ToString();
+Console.WriteLine(message);
+//57
+
+
+//iremos utilizar o método Parse() para converter duas cadeias 
+//em valores int e, em seguida, somá-los.
+string first = "5";
+string second = "7";
+int sum = int.Parse(first) + int.Parse(second);
+Console.WriteLine(sum);
+//12
+
+
+//Quando devemos utilizar a classe Convert?
+//A classe Convert é a melhor opção para converter números fracionários em números inteiros (int) porque arredonda da forma esperada.
+//Utilizámos o método Convert.ToInt32() com uma cadeia aqui, mas recomendamos que utilize o método TryParse() sempre que possível.
+//converter uma cadeia num número com a classe Convert
+string value1 = "5";
+string value2 = "7";
+int result = Convert.ToInt32(value1) * Convert.ToInt32(value2);
+Console.WriteLine(result);
+//35
+
+//O seguinte exemplo demonstra o que acontece quando tenta realizar uma conversão 
+//de tipo cast de decimal num int (uma conversão de restrição) em comparação com 
+//a utilização do método Convert.ToInt32() para converter o mesmo decimal num int.
+int value = (int)1.5m; // casting truncates Truncamento, ignora o decimal
+Console.WriteLine(value);
+
+int value2 = Convert.ToInt32(1.5m); // converting rounds up Arredondamento
+Console.WriteLine(value2);
+//1
+//2
+
+//A palavra-chave out instrui o compilador a indicar que o método TryParse() não só irá devolver um valor da forma tradicional
+//(como um valor de retorno), como também irá comunicar um resultado através deste parâmetro bidirecional.
+string value = "102";
+int result = 0;
+if (int.TryParse(value, out result))
+{
+    Console.WriteLine($"Measurement: {result}");
+}
+else
+{
+    Console.WriteLine("Unable to report the measurement.");
+}
+
+// Since it is defined outside of the if statement, 
+// it can be accessed later in your code.
+Console.WriteLine($"Measurement (w/ offset): {50 + result}");
+//Measurement: 102
+//Measurement (w/ offset): 152
+
+
+//Regra 1: se o valor for alfanumérico, concatene-o para formar uma mensagem
+//Regra 2: se o valor for numérico, some-o ao total
+string[] values = { "12.3", "45", "ABC", "11", "DEF" };
+
+decimal total = 0m;
+string message = "";
+
+foreach (var value in values)
+{
+    decimal number;
+    if (decimal.TryParse(value, out number))
+    {
+        total += number;
+    } else
+    {
+        message += value;
+    }
+}
+
+Console.WriteLine($"Message: {message}");
+Console.WriteLine($"Total: {total}");
+//Message: ABCDEF
+//Total: 68.3
