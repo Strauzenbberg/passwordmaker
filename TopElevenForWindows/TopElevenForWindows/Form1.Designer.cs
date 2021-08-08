@@ -43,6 +43,8 @@ namespace TopElevenForWindows
             this.lblTempoShow = new System.Windows.Forms.Label();
             this.lblGanhoShow = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // mskTextHoraDoJogo
@@ -171,11 +173,22 @@ namespace TopElevenForWindows
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             this.btnLimpar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnLimpar_KeyDown);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TopElevenForWindows.Properties.Resources.olympics_sport_football_ball_2277;
+            this.pictureBox1.Location = new System.Drawing.Point(284, 124);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(128, 128);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(453, 358);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.lblGanhoShow);
             this.Controls.Add(this.lblTempoShow);
@@ -201,6 +214,7 @@ namespace TopElevenForWindows
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPrincipal_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmPrincipal_KeyUp);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,6 +235,7 @@ namespace TopElevenForWindows
         private System.Windows.Forms.Label lblGanhoShow;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.MaskedTextBox mskTextHoraDoJogo;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

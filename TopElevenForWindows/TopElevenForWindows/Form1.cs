@@ -38,25 +38,18 @@ namespace TopElevenForWindows
                 var horaAtual = DateTime.Now.Hour;
                 Convert.ToInt32(horaAtual);
 
-                //Título
-                //Console.WriteLine("TOP ELEVEN TIMER \r");
-                //Console.WriteLine("----------------\n");
+                
 
 
                 //Um prompt para perguntar ao usuário a hora do jogo 
-                //mskTextHoraDoJogo.Text = horaDoJogo();
-                //horaDoJogo = 
-                //int horaDoJogo = 0;
+              
 
                 int horaDoJogo = int.Parse(mskTextHoraDoJogo.Text, CultureInfo.InvariantCulture);
                 Convert.ToInt32(horaDoJogo);
-                //Console.WriteLine("Digite a hora do jogo, sem os minutos, no formato 24 e pressione Enter:\n");
-                //int horaDoJogo = Convert.ToInt32(mskTextHoraDoJogo.Text);
+                
 
-                //Declaração de uma variável
+              
                 int tempoAtejogo;
-
-                //Calculo de horas até o jogo
 
 
                 if (horaAtual >= horaDoJogo)
@@ -79,21 +72,14 @@ namespace TopElevenForWindows
 
                 //Ponto central do programa. Cálculo da energia final.
                 int energiaMinima = 100 - ((((tempoAtejogo - 1) / 3) * 6));
-                //Console.WriteLine("");
-
-
-                // Console.WriteLine($"Energia Mínima: {energiaMinima}%\n");
-
-                //Console.WriteLine($"Hora atual: {horaAtual}\n");
-
-                //Console.WriteLine($"Tempo até o jogo: {tempoAtejogo} horas\n");
+                
 
                 int ganho = ((((tempoAtejogo - 1) / 3) * 6));
-                //Console.WriteLine($"Ganho de energia até o jogo: {ganho}%\n");
+                
 
                 lblEnergiaShow.Text = energiaMinima.ToString("##");
-                lblAtualShow.Text = horaAtual.ToString("##");
-                lblTempoShow.Text = tempoAtejogo.ToString("##");
+                lblAtualShow.Text = horaAtual.ToString("##h");
+                lblTempoShow.Text = tempoAtejogo.ToString("##h");
                 lblGanhoShow.Text = ganho.ToString("##");
                 btnLimpar.Focus();
 

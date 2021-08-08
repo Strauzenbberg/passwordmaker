@@ -1,4 +1,55 @@
-git e github
+git: 
 
-git 
+git status -> Mostra o que foi modificado em vermelho
+git add . -> Prepara tudo na pasta para ser commitado
+git commit -m "Descrição da modificação feita" -> Efetua o commit
+git log -> mostra uma descrição dos commits já feitos
+(git log --oneline -> forma mais resumida do git log)
+git status
+(obs Se esquecer de descrever o commit, abrirá um editor, dar esc e digitar q!)
+
+Voltar o projeto ao estado do último commit, descartando todas as modificações:
+git clean -df
+git checkout -- .
+de volta ao visual studio Yes.
+
+1 Remover a descrição do último commit, mantendo as alterações nos arquivos:
+git reset --soft HEAD~1	
+git status
+git log
+git add .
+commitar novamente normalmente
+
+2 Remover a descrição do último commit, INCLUSIVE as alterações nos arquivos:
+git reset --hard HEAD~1
+
+Apenas dar uma olhada num commit antigo:
+git status
+git checkout 65465d4
+Visual studio yes
+
+voltar
+git checkout master
+
+github:
+
+Associar pasta local ao remoto
+git remote add origin https://github.com/Strauzenbberg/csharp.git
+
+associar pasta local a outro repositorio remoto 
+git remote set -url csharp uri do repositorio remoto
+
+Transferir repositorio local para remoto primeira vez
+git push -u origin master
+
+transeferir segunda vez em diante
+git push
+
+Copiar repositorio remoto para seu computador (com historico de commits)
+git clone uri do repositorio remoto(ou seja, o endereço http da pasta onde está seus arquivos)
+
+Atualizar meu repositório local em relação ao online github
+git pull origin master
+
+
 
